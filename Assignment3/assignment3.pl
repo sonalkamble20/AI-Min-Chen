@@ -22,34 +22,58 @@ daughter(eugenie, sarah).
 daughter(zara, anne).
 
 husband(H, W) :- wife(W, H).
-spouse(X, Y) :- wife(X, Y); husband(X, Y).
-spouse(Y, X) :- spouse(X, Y).
 
-child(C, P) :- son(C, P); daughter(C, P).
+spouse(X, Y) :- wife(X, Y).
+spouse(X, Y) :- husband(X, Y).
+
+child(C, P) :- son(C, P).
+child(C, P) :- daughter(C, P).
+
 parent(P, C) :- child(C, P).
+parent(P, C) :- spouse(P, S), child(C, S).
+
 
 grandChild(G, P) :- parent(X, G), parent(P, X).
-greatGrandParent(GG, C) :- parent(GG, P), grandChild(C, P).
 
-brother(B, S) :- son(B, P), parent(P, S), B \= S.
-sister(S, Sib) :- daughter(S, P), parent(P, Sib), S \= Sib.
+greatGrandParent(GG, C) :-
+    parent(GG, X),
+    parent(X, Y),
+    parent(Y, C).
+
+
+
+brother(B, S) :- son(B, P), child(S, P), B \= S.
+sister(S, Sib) :- daughter(S, P), child(Sib, P), S \= Sib.
+
+sibling(X, Y) :- brother(X, Y).
+sibling(X, Y) :- sister(X, Y).
 
 uncle(U, N) :- brother(U, P), parent(P, N).
-aunt(A, N) :- sister(A, P), parent(P, N).
+uncle(U, N) :- spouse(U, A), sister(A, P), parent(P, N).
 
-brotherInLaw(B, X) :-
-    husband(B, Y), sister(Y, X);
-    husband(B, Y), spouse(X, Y);
-    brother(B, Y), spouse(Y, X).
+aunt(A, N) :- sister(A, P), parent(P, N).
+aunt(A, N) :- spouse(A, U), brother(U, P), parent(P, N).
+
+brotherInLaw(B, X) :- spouse(X, S), brother(B, S).
+brotherInLaw(B, X) :- spouse(B, S), sister(S, X).
 
 sisterInLaw(S, X) :-
-    wife(S, Y), brother(Y, X);
-    wife(S, Y), spouse(X, Y);
-    sister(S, Y), spouse(Y, X).
+    wife(S, Y),
+    brother(Y, X),
+    S \= X.
+
+sisterInLaw(S, X) :-
+    sister(S, Y),
+    spouse(Y, X),
+    S \= X.
+
+
 
 firstCousin(X, Y) :-
-    parent(P1, X), parent(P2, Y), brother(P1, P2);
-    parent(P1, X), parent(P2, Y), sister(P1, P2), X \= Y.
+    parent(P1, X),
+    parent(P2, Y),
+    sibling(P1, P2),
+    X \= Y.
 
 % =========================================
 % Question 2 – Dating Rules
@@ -64,8 +88,6 @@ person(tom, male, 177, 29, hs).
 degree_lower(hs, bs).
 degree_lower(bs, ms).
 degree_lower(ms, phd).
-degree_lower(D, D).
-degree_lower(A, C) :- degree_lower(A, B), degree_lower(B, C).
 
 dateable(F, M) :-
     person(F, female, HF, AF, EF),
@@ -73,4 +95,8 @@ dateable(F, M) :-
     HM >= HF,
     degree_lower(EF, EM),
     AM >= AF,
-    (AM - AF) =< 10.
+    Diff is AM - AF,
+    Diff =< 10.
+
+
+

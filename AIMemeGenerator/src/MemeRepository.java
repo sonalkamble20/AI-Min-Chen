@@ -9,11 +9,11 @@ public class MemeRepository {
         // ---------- THE OFFICE ----------
         memes.put("michael_no_god", new Meme(
                 "NO GOD, PLEASE NO!",
-                "https://media.giphy.com/media/11tTNkNy1SdXGg/giphy.gif",
+                "https://media.tenor.com/kbQv5cIBq8IAAAAM/the-office-steve-carell.gif",
                 Map.ofEntries(
                         Map.entry("deadline", 3),
-                        Map.entry("due", 3),
-                        Map.entry("fail", 3),
+                        Map.entry("relatives", 3),
+                        Map.entry("thanksgiving", 3),
                         Map.entry("late", 2),
                         Map.entry("panic", 3),
                         Map.entry("exam", 2),
@@ -30,13 +30,13 @@ public class MemeRepository {
         ));
 
         memes.put("jim_group_project", new Meme(
-                "When you realize you’re the only one doing the work.",
-                "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
+                "",
+                "https://media1.giphy.com/media/ly8G39g1ujpNm/giphy.gif",
                 Map.ofEntries(
                         Map.entry("group", 3),
                         Map.entry("project", 3),
-                        Map.entry("alone", 3),
-                        Map.entry("lazy", 3),
+                        Map.entry("present", 3),
+                        Map.entry("reaction", 3),
                         Map.entry("teamwork", 2),
                         Map.entry("awkward", 3),
                         Map.entry("tired", 2),
@@ -53,11 +53,11 @@ public class MemeRepository {
 
         // ---------- MODERN FAMILY ----------
         memes.put("phil_sarcasm", new Meme(
-                "Can I interest you in a sarcastic comment?",
-                "https://media.giphy.com/media/3orieRVvn1ZVxTjGbm/giphy.gif",
+                "Really...",
+                "https://i.pinimg.com/originals/24/b7/ca/24b7ca32502e1941fed2bdf4afa87167.gif",
                 Map.ofEntries(
-                        Map.entry("sarcasm", 3),
-                        Map.entry("sarcastic", 3),
+                        Map.entry("feedback", 3),
+                        Map.entry("presentation", 3),
                         Map.entry("joke", 2),
                         Map.entry("funny", 2),
                         Map.entry("pun", 1),
@@ -76,9 +76,9 @@ public class MemeRepository {
 
         memes.put("gloria_yelling", new Meme(
                 "Why are you shouting? I’m right here!",
-                "https://media.giphy.com/media/l3q2wJsC23ikJg9xe/giphy.gif",
+                "https://i.pinimg.com/originals/34/ca/23/34ca237a92a7858404c036a0d5adfd9b.gif",
                 Map.ofEntries(
-                        Map.entry("angry", 3),
+                        Map.entry("shouting", 3),
                         Map.entry("loud", 3),
                         Map.entry("yelling", 3),
                         Map.entry("argument", 2),
@@ -99,11 +99,10 @@ public class MemeRepository {
         // ---------- THE BIG BANG THEORY ----------
         memes.put("sheldon_bazinga", new Meme(
                 "Bazinga!",
-                "https://media.giphy.com/media/EldfH1VJdbrwY/giphy.gif",
+                "https://media1.tenor.com/m/lXdlrxwLUCwAAAAC/bazinga-sheldon.gif",
                 Map.ofEntries(
                         Map.entry("joke", 3),
                         Map.entry("prank", 3),
-                        Map.entry("sarcasm", 3),
                         Map.entry("trick", 3),
                         Map.entry("haha", 2),
                         Map.entry("funny", 2),
@@ -121,7 +120,7 @@ public class MemeRepository {
 
         memes.put("penny_confused", new Meme(
                 "What is wrong with you?",
-                "https://media.giphy.com/media/3o6Zt7U9gGvVd4sUfu/giphy.gif",
+                "https://i.pinimg.com/originals/3c/6e/de/3c6ede407e4566abf2b3079d306fa287.gif",
                 Map.ofEntries(
                         Map.entry("confused", 3),
                         Map.entry("crazy", 3),
@@ -144,7 +143,7 @@ public class MemeRepository {
         // ---------- BREAKING BAD ----------
         memes.put("walter_power", new Meme(
                 "I am the one who knocks.",
-                "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+                "https://media.tenor.com/DjQrkDVYpHwAAAAM/breaking-bas-bryan-cranston.gif",
                 Map.ofEntries(
                         Map.entry("boss", 3),
                         Map.entry("serious", 3),
@@ -167,7 +166,7 @@ public class MemeRepository {
 
         memes.put("jesse_science", new Meme(
                 "Yeah science!",
-                "https://media.giphy.com/media/9J7tdYltWyXIY/giphy.gif",
+                "https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUydW9zMjRycGRyMjBvYXBvaWk2Z3pjN3Fwcng5ZWI1dDI5Z3Y5ajRpayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/LiljwvntZmf4c/giphy.gif",
                 Map.ofEntries(
                         Map.entry("success", 3),
                         Map.entry("worked", 3),
@@ -189,7 +188,7 @@ public class MemeRepository {
 
         memes.put("nana_control_uday", new Meme(
                 "Control, Uday, Control!",
-        "https://i.makeagif.com/media/1-21-2024/PaONAz.gif",
+        "https://media.tenor.com/ZkgCCkSo70gAAAAM/control-control-welcome.gif",
                 Map.ofEntries(
                         Map.entry("angry", 3),
                         Map.entry("control", 3),
@@ -208,6 +207,16 @@ public class MemeRepository {
                         Map.entry("welcome", 3)
                 )
         ));
+
+        memes.put("fallback_default", new Meme(
+                "This is a fallback meme in case I don't have a proper response in the repository ",
+                "https://media.tenor.com/7QhoA9wcstgAAAAM/confused-no.gif",
+                Map.ofEntries(
+                        Map.entry("unknown", 1),
+                        Map.entry("random", 1),
+                        Map.entry("default", 1),
+                        Map.entry("fallback", 1)
+                )));
 
         return memes;
     }
